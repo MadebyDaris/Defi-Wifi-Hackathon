@@ -1,8 +1,10 @@
+import 'dart:convert';
+
 import 'package:defiwifi/map.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:http/http.dart' as http;
-
+import 'package:defiwifi/direction.dart';
 void main() {
   runApp(const MainApp());
 }
@@ -13,16 +15,15 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: 
-      MapPage()
-      // Scaffold(
-      //   body: Center(
-      //     child: 
-      //     BlocProvider(
-      //       create: (context) => BackendBloc(),
-      //       child: const MyWidget()),
-      //   ),
-      // ),
+      home:
+        Scaffold(
+          body: Container(
+            child:
+            BlocProvider(
+              create: (context) => BackendBloc(),
+              child: const WiFiWidget()),
+          ),
+        ),
     );
   }
 }
@@ -40,8 +41,8 @@ class BackendBloc extends Cubit<String> {
   }
 }
 
-class MyWidget extends StatelessWidget {
-  const MyWidget({super.key});
+class WiFiWidget extends StatelessWidget {
+  const WiFiWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -49,19 +50,37 @@ class MyWidget extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Flutter App with Python Backend'),
+        title: Text('Défi WiFi carte'),
       ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            backendBloc.fetchData();
-          },
-          child: BlocBuilder<BackendBloc, String>(
-          builder: (context, state) {
-            return Text(state);
-          },
-        ),
-        ),
+      body: Stack(
+        children: [
+          BlocBuilder<BackendBloc, String>(
+            builder: (context, state) {
+              if (state.isEmpty || state == 'Failed to fetch data') {
+                return const Center(child: Text('No data available'));
+              }
+              try {
+                final wifiData = jsonDecode(state) as List;
+                return WiFiMapWithLines(
+                  wifiData: wifiData.cast<Map<String, dynamic>>(),
+                );
+              } catch (e) {
+                return Center(child: Text('Error parsing data: $e'));
+              }
+            }
+          ),
+          // MapPage(),
+          Positioned(
+            bottom: 20,
+            right: 20,
+            child: ElevatedButton(
+              onPressed: () {
+                backendBloc.fetchData();
+              },
+              child: const Text('Refresh Data'),
+            ),
+          ),
+        ]
       ),
     );
   }

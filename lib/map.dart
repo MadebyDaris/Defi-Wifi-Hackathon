@@ -7,8 +7,6 @@ import 'package:latlong2/latlong.dart';
 import 'package:defiwifi/tile_provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-
-
 class MapPage extends StatefulWidget  {
     final String title;
 
@@ -30,8 +28,8 @@ class _MapPageState extends State<MapPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // drawer: const MenuDrawer(HomePage.route),
       body:
+        Stack(children: [
           FlutterMap(
             options: MapOptions(),
             children: [
@@ -55,6 +53,8 @@ class _MapPageState extends State<MapPage> {
               ),
             ],
           ),
+        ],
+      )
     );
   }
 }
