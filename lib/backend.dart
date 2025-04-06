@@ -1,41 +1,31 @@
-// import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:defiwifi/direction.dart';
 
-// class UserInformation extends StatefulWidget {
-//   @override
-//   _UserInformationState createState() => _UserInformationState();
-// }
+class FirestoreService {
+  final FirebaseFirestore _db = FirebaseFirestore.instance;
 
-// class _UserInformationState extends State<UserInformation> {
-//   final Stream<QuerySnapshot> _usersStream =
-//       FirebaseFirestore.instance.collection('users').snapshots();
+  Stream<List<WiFiData>> getWiFiDataStream() {
+    return _db.collection('wifi_scans')
+      .orderBy('timestamp', descending: true)
+      .snapshots()
+      .map((snapshot) => snapshot.docs
+          .map((doc) => WiFiData.fromJson(doc.data()))
+          .toList());
+  }
 
-//   @override
-//   Widget build(BuildContext context) {
-//     return StreamBuilder<QuerySnapshot>(
-//       stream: _usersStream,
-//       builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
-//         if (snapshot.hasError) {
-//           return const Text('Something went wrong');
-//         }
-
-//         if (snapshot.connectionState == ConnectionState.waiting) {
-//           return const Text("Loading");
-//         }
-
-//         return ListView(
-//           children: snapshot.data!.docs
-//               .map((DocumentSnapshot document) {
-//                 Map<String, dynamic> data =
-//                     document.data()! as Map<String, dynamic>;
-//                 return ListTile(
-//                   title: Text(data['full_name']),
-//                   subtitle: Text(data['company']),
-//                 );
-//               })
-//               .toList()
-//               .cast(),
-//         );
-//       },
-//     );
-//   }
-// }
+  Future<List<WiFiData>> getWiFiDataOnce() async {
+    try {
+      final snapshot = await _db.collection('wifi_scans')
+        .orderBy('timestamp', descending: true)
+        .limit(100)
+        .get();
+      
+      return snapshot.docs
+          .map((doc) => WiFiData.fromJson(doc.data()))
+          .toList();
+    } catch (e) {
+      print('Error getting WiFi data: $e');
+      return [];
+    }
+  }
+}

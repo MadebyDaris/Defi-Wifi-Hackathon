@@ -69,7 +69,7 @@ class WiFiWidget extends StatelessWidget {
               }
             }
           ),
-          // MapPage(),
+          WiFiMapWithLines(wifiData: [],),
           Positioned(
             bottom: 20,
             right: 20,
