@@ -80,6 +80,8 @@ def run_scanner():
     else:
         print("No networks found to save")
 
+
+
 if __name__ == "__main__":
     # Run scanner immediately
     run_scanner()

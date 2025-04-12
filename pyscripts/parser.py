@@ -77,6 +77,14 @@ def plot_multiple_locations_with_radii(locations):
 # Read CSV with semicolon delimiter
 df = pd.read_csv('Fichier_Scan_WiFi.csv', delimiter=';')
 
+# calcul de l'intensité du signal avec l'approximation
+df['Signal Strength_2.0'] = (df['Signal Strength (%)']/100) * (RSSImax - RSSImin) + RSSImin
+
+
+# Estimation de la distance 
+df['Estimated Distance 2.0 (m)'] = round(10 ** ((27.55 - (20 * math.log10(2400)) + abs(df['Signal Strength_2.0'])) / 20), 2)
+
+
 # Convert to a 2D NumPy array
 data = df.to_numpy()
 
@@ -95,9 +103,9 @@ P_emis = 23.0
 Att = P_emis - P_recue
 
 # Distance calculation (in meters)
-dist = 10**((Att + 27.55 - 20 * np.log10(2.4 * 10**3)) / 20)
+# dist = 10**((Att + 27.55 - 20 * np.log10(2.4 * 10**3)) / 20)
 
-data = np.concatenate((data, dist.reshape(-1,1)), axis=1)
+# data = np.concatenate((data, dist.reshape(-1,1)), axis=1)
 
 df = pd.DataFrame(data, columns=[
     'timestamp', 'ssid', 'mac', 'signal_percent', 'signal_dbm',
@@ -141,10 +149,19 @@ filtered_data = data[filter]
 lat_center = float(filtered_data[0][-3])
 lon_center = float(filtered_data[0][-2])
 
+RSSImax = -20
+RSSImin = -90
+
+
+# calcul de l'intensité du signal avec l'approximation
+df['signal_percent'] = df['signal_percent'].str.replace("%", "")
+df['dist'] = (df['signal_percent'].astype(float)/100) * (RSSImax - RSSImin) + RSSImin
+# Estimation de la distance 
+# df['Estimated Distance 2.0 (m)'] = round(10 ** ((27.55 - (20 * math.log10(2400)) + abs(df['Signal Strength_2.0'])) / 20), 2)
+
 m = folium.Map(location=[lat_center, lon_center], zoom_start=17)
 
-
-a = np.concatenate((data[filter][:, :3],data[filter][:,-3:]), axis=1)
+a = np.concatenate((data[filter][:, :3],df['dist']), axis=1)
 print(data[filter])
 
 for row in filtered_data:
@@ -165,65 +182,3 @@ for row in filtered_data:
 
 # Save or display the map
 m.save("wifi_map.html")
-
-# # Define the coordinates and radii for the 4 circles
-# lat1, lon1, r1 = 48.80452994, 2.426796692, 18.083760985197642
-# lat2, lon2, r2 = 48.8044629, 2.426905052, 172.69857668247474
-# lat3, lon3, r3 = 48.804311, 2.426256, 2.2247886398924037
-
-
-
-
-
-
-# # Create a folium map centered at the midpoint between all 4 circles
-# map_center = [(lat1 + lat2 + lat3) / 3, (lon1 + lon2 + lon3) / 3]
-# mymap = folium.Map(location=map_center, zoom_start=15)
-
-# # Add Circle 1
-# folium.Circle(
-#     location=[lat1, lon1],
-#     radius=r1,
-#     color="blue",
-#     fill=True,
-#     fill_color="blue",
-#     fill_opacity=0.2
-# ).add_to(mymap)
-
-# # Add Circle 2
-# folium.Circle(
-#     location=[lat2, lon2],
-#     radius=r2,
-#     color="red",
-#     fill=True,
-#     fill_color="red",
-#     fill_opacity=0.2
-# ).add_to(mymap)
-
-# # Add Circle 3
-# folium.Circle(
-#     location=[lat3, lon3],
-#     radius=r3,
-#     color="green",
-#     fill=True,
-#     fill_color="green",
-#     fill_opacity=0.2
-# ).add_to(mymap)
-
-
-# # Save the map to an HTML file and display it
-# mymap.save("three_circles_map.html")
-
-
-
-
-
-
-
-
-
-
-
-
-# x = 10**((80 + 27.55 - 20 * np.log10(2.4 * 10**3)) / 20)
-# print(x)

@@ -1,0 +1,19 @@
+[package]
+name = "rust_backend"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+name = "rust_backend"           # The name of the target.
+path = "src/lib.rs"    # The source file of the target.
+test = true            # Is tested by default.
+doctest = true         # Documentation examples are tested by default.
+bench = true           # Is benchmarked by default.
+doc = true             # Is documented by default.
+proc-macro = false     # Set to `true` for a proc-macro library.
+harness = true         # Use libtest harness.
+edition = "2024"       # The edition of the target.
+crate-type = ["cdylib"]
+required-features = [] # Features required to build this target (N/A for lib).
+
+[dependencies]

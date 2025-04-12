@@ -8,15 +8,20 @@ def get_location():
     g = geocoder.ip('me')
     return g.latlng if g.latlng else [None, None]
 
-def signal_percent_to_dbm(signal_percent):
-
-    return (signal_percent / 2) - 100
-
-
+def estimate_distance(dbm, freq_mhz=2400):
+    # Free-space path loss formula approximation
     try:
         return round(10 ** ((27.55 - (20 * math.log10(freq_mhz)) + abs(dbm)) / 20), 2)
     except Exception:
         return None
+
+RSSImax = -20
+RSSImin = -90
+
+
+def signal_percent_to_dbm(signal_percent):
+
+    return (signal_percent / 100) * (RSSImax - RSSImin) + RSSImin
 
 def parse_wifi_data(data):
     networks = []

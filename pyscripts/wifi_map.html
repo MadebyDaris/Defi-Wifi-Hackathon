@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_ca340bcc847d679bfd36f2f6fde32857 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_ca340bcc847d679bfd36f2f6fde32857" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_ca340bcc847d679bfd36f2f6fde32857 = L.map(
+                "map_ca340bcc847d679bfd36f2f6fde32857",
+                {
+                    center: [48.80452994, 2.426796692],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 17,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_385d5a433df05d6ea600f5862c114ee8 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_385d5a433df05d6ea600f5862c114ee8.addTo(map_ca340bcc847d679bfd36f2f6fde32857);
+        
+    
+            var circle_638aa8fa61a233adb7a1c5af873e4a1f = L.circle(
+                [48.80452994, 2.426796692],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.81, "stroke": true, "weight": 3}
+            ).addTo(map_ca340bcc847d679bfd36f2f6fde32857);
+        
+    
+        var popup_f0fc15514e618c6fa30bcfeb44a00bd8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_42bbe7a65e80970aac3f982af7795188 = $(`<div id="html_42bbe7a65e80970aac3f982af7795188" style="width: 100.0%; height: 100.0%;">Petit Lapin 2025 @ 31/03/2025 10:41 @ 1.81</div>`)[0];
+                popup_f0fc15514e618c6fa30bcfeb44a00bd8.setContent(html_42bbe7a65e80970aac3f982af7795188);
+            
+        
+
+        circle_638aa8fa61a233adb7a1c5af873e4a1f.bindPopup(popup_f0fc15514e618c6fa30bcfeb44a00bd8)
+        ;
+
+        
+    
+    
+            var circle_3c35e965c0e76239424d2951133d14af = L.circle(
+                [48.8044629, 2.426905052],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 17.27, "stroke": true, "weight": 3}
+            ).addTo(map_ca340bcc847d679bfd36f2f6fde32857);
+        
+    
+        var popup_3b7dd4a4ec25a9930dbda5c53f55922b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ea9088b285e36c89bdc3270971c70cf7 = $(`<div id="html_ea9088b285e36c89bdc3270971c70cf7" style="width: 100.0%; height: 100.0%;">Petit Lapin 2025 @ 31/03/2025 10:41 @ 17.27</div>`)[0];
+                popup_3b7dd4a4ec25a9930dbda5c53f55922b.setContent(html_ea9088b285e36c89bdc3270971c70cf7);
+            
+        
+
+        circle_3c35e965c0e76239424d2951133d14af.bindPopup(popup_3b7dd4a4ec25a9930dbda5c53f55922b)
+        ;
+
+        
+    
+    
+            var circle_c80c4b2c3d39afe0fb4ffcd10b10cee8 = L.circle(
+                [48.804311, 2.426256],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.22, "stroke": true, "weight": 3}
+            ).addTo(map_ca340bcc847d679bfd36f2f6fde32857);
+        
+    
+        var popup_f5cd94eb7f7a44475dc359ee605b6d73 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_aad158460baf579bfd90270b0764cec9 = $(`<div id="html_aad158460baf579bfd90270b0764cec9" style="width: 100.0%; height: 100.0%;">Petit Lapin 2025 @ 31/03/2025 10:41 @ 0.22</div>`)[0];
+                popup_f5cd94eb7f7a44475dc359ee605b6d73.setContent(html_aad158460baf579bfd90270b0764cec9);
+            
+        
+
+        circle_c80c4b2c3d39afe0fb4ffcd10b10cee8.bindPopup(popup_f5cd94eb7f7a44475dc359ee605b6d73)
+        ;
+
+        
+    
+    
+            var circle_0c4fa6bcdea509fdfcfb18e1cd9b5f03 = L.circle(
+                [48.80436111, 2.426555556],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": NaN, "stroke": true, "weight": 3}
+            ).addTo(map_ca340bcc847d679bfd36f2f6fde32857);
+        
+    
+        var popup_9564a66727d047cf1c8e3e6c7aaf77bc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7adbadfd4e0e0869d0ae6561081e5f8d = $(`<div id="html_7adbadfd4e0e0869d0ae6561081e5f8d" style="width: 100.0%; height: 100.0%;">Petit Lapin 2025 @ 31/03/2025 10:41 @ nan</div>`)[0];
+                popup_9564a66727d047cf1c8e3e6c7aaf77bc.setContent(html_7adbadfd4e0e0869d0ae6561081e5f8d);
+            
+        
+
+        circle_0c4fa6bcdea509fdfcfb18e1cd9b5f03.bindPopup(popup_9564a66727d047cf1c8e3e6c7aaf77bc)
+        ;
+
+        
+    
+    
+            var circle_c901a09526c4b9e77ca9167dfbf0d21b = L.circle(
+                [48.8044629, 2.426905052],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 17.27, "stroke": true, "weight": 3}
+            ).addTo(map_ca340bcc847d679bfd36f2f6fde32857);
+        
+    
+        var popup_4a87c01290e919c306a42a9e07076a53 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a02169fda36cb205ac040c153a1b3775 = $(`<div id="html_a02169fda36cb205ac040c153a1b3775" style="width: 100.0%; height: 100.0%;">Petit Lapin 2025 @ 31/03/2025 10:41 @ 17.27</div>`)[0];
+                popup_4a87c01290e919c306a42a9e07076a53.setContent(html_a02169fda36cb205ac040c153a1b3775);
+            
+        
+
+        circle_c901a09526c4b9e77ca9167dfbf0d21b.bindPopup(popup_4a87c01290e919c306a42a9e07076a53)
+        ;
+
+        
+    
+    
+            var circle_e10287a9b30a6b3d21c8af6736190430 = L.circle(
+                [48.804311, 2.426256],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.22, "stroke": true, "weight": 3}
+            ).addTo(map_ca340bcc847d679bfd36f2f6fde32857);
+        
+    
+        var popup_088747ceafb378001e75cdaaf3401074 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_70a1796881e7234863e6e44d34076b41 = $(`<div id="html_70a1796881e7234863e6e44d34076b41" style="width: 100.0%; height: 100.0%;">Petit Lapin 2025 @ 31/03/2025 10:41 @ 0.22</div>`)[0];
+                popup_088747ceafb378001e75cdaaf3401074.setContent(html_70a1796881e7234863e6e44d34076b41);
+            
+        
+
+        circle_e10287a9b30a6b3d21c8af6736190430.bindPopup(popup_088747ceafb378001e75cdaaf3401074)
+        ;
+
+        
+    
+    
+            var circle_c34435da6e47eee4123bf70c346b35fe = L.circle(
+                [48.804311, 2.426256],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.22, "stroke": true, "weight": 3}
+            ).addTo(map_ca340bcc847d679bfd36f2f6fde32857);
+        
+    
+        var popup_238794562b6daca3ad0fdcfef36308cc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9970ad992c642980d8eeeb50908a7706 = $(`<div id="html_9970ad992c642980d8eeeb50908a7706" style="width: 100.0%; height: 100.0%;">Petit Lapin 2025 @ 31/03/2025 10:41 @ 0.22</div>`)[0];
+                popup_238794562b6daca3ad0fdcfef36308cc.setContent(html_9970ad992c642980d8eeeb50908a7706);
+            
+        
+
+        circle_c34435da6e47eee4123bf70c346b35fe.bindPopup(popup_238794562b6daca3ad0fdcfef36308cc)
+        ;
+
+        
+    
+    
+            var marker_917013d4efc70d8fe0a40b3e7f335172 = L.marker(
+                [48.80446289999999, 2.426905051999998],
+                {
+}
+            ).addTo(map_ca340bcc847d679bfd36f2f6fde32857);
+        
+    
+            var icon_05314b4c5c8f117f7eebb675dc46d3e6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "crosshairs",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_679770dda99d4c6bd0342dbb797ffa52 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7b027b49c0d9a9a8885f50667d591997 = $(`<div id="html_7b027b49c0d9a9a8885f50667d591997" style="width: 100.0%; height: 100.0%;"><b>Estimated Position</b><br>Margin: 2.5m</div>`)[0];
+                popup_679770dda99d4c6bd0342dbb797ffa52.setContent(html_7b027b49c0d9a9a8885f50667d591997);
+            
+        
+
+        marker_917013d4efc70d8fe0a40b3e7f335172.bindPopup(popup_679770dda99d4c6bd0342dbb797ffa52)
+        ;
+
+        
+    
+    
+            marker_917013d4efc70d8fe0a40b3e7f335172.bindTooltip(
+                `<div>
+                     Click for details
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_917013d4efc70d8fe0a40b3e7f335172.setIcon(icon_05314b4c5c8f117f7eebb675dc46d3e6);
+            
+    
+            var circle_47c2db28d93ab78979b919eb0b0f0e3c = L.circle(
+                [48.80446289999999, 2.426905051999998],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2.5, "stroke": true, "weight": 3}
+            ).addTo(map_ca340bcc847d679bfd36f2f6fde32857);
+        
+    
+        var popup_2cf45dc2cc0f6495a08ecd3769174853 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6f42807041b5f9e9218ba3d749a7d709 = $(`<div id="html_6f42807041b5f9e9218ba3d749a7d709" style="width: 100.0%; height: 100.0%;">Estimation Accuracy: ±2.5m</div>`)[0];
+                popup_2cf45dc2cc0f6495a08ecd3769174853.setContent(html_6f42807041b5f9e9218ba3d749a7d709);
+            
+        
+
+        circle_47c2db28d93ab78979b919eb0b0f0e3c.bindPopup(popup_2cf45dc2cc0f6495a08ecd3769174853)
+        ;
+
+        
+    
+</script>
+</html>

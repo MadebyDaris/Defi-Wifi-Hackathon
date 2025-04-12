@@ -5,7 +5,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:http/http.dart' as http;
 import 'package:defiwifi/direction.dart';
+import 'package:defiwifi/rs_link.dart';
+
+
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  // await Firebase.initializeApp();
+
   runApp(const MainApp());
 }
 
@@ -80,6 +86,7 @@ class WiFiWidget extends StatelessWidget {
               child: const Text('Refresh Data'),
             ),
           ),
+          Text(getHelloFromRust()),
         ]
       ),
     );

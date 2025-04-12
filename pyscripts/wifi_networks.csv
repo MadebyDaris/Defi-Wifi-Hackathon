@@ -1,0 +1,16 @@
+Timestamp,SSID,BSSID,Signal Strength (%),Signal Strength (dBm),Estimated Distance (m),Latitude,Longitude,Device Network Status
+2025-04-06 15:04:17,Isep NDL EAP,c0:c7:0a:9d:2c:43,100,-20.0,0.1,48.7719,2.0189,Connected
+2025-04-06 15:04:53,Isep NDL EAP,c0:c7:0a:5c:36:93,10,-83.0,140.37,48.7719,2.0189,Connected
+2025-04-06 15:04:53,Isep NDL,c0:c7:0a:5c:d4:84,100,-20.0,0.1,48.7719,2.0189,Not Connected
+2025-04-06 15:04:53,ISEP visiteurs,c0:c7:0a:5c:d4:82,100,-20.0,0.1,48.7719,2.0189,Not Connected
+2025-04-06 15:04:53,RScreen_2841AB11,fe:19:28:41:ab:11,100,-20.0,0.1,48.7719,2.0189,Not Connected
+2025-04-06 15:04:53,ISEP CyberSecu 5G,20:e5:2a:3c:6c:01,15,-79.5,93.82,48.7719,2.0189,Not Connected
+2025-04-06 15:04:53,OpenWrt,6c:aa:b3:04:80:bc,30,-69.0,28.01,48.7719,2.0189,Not Connected
+2025-04-06 15:04:53,ISEP CyberSecu 2.4G,20:e5:2a:3c:6c:00,85,-30.5,0.33,48.7719,2.0189,Not Connected
+2025-04-06 15:04:53,Coucou,ca:7b:76:1b:4d:2a,100,-20.0,0.1,48.7719,2.0189,Not Connected
+2025-04-06 15:04:53,DIRECT-aCM2020 Series,32:cd:a7:a0:39:1c,50,-55.0,5.59,48.7719,2.0189,Not Connected
+2025-04-06 15:04:53,Galaxy A32E2C0,ca:10:7f:91:32:39,100,-20.0,0.1,48.7719,2.0189,Not Connected
+2025-04-06 15:04:53,S24 Ultra de Hans,fa:37:4b:8f:e4:5b,100,-20.0,0.1,48.7719,2.0189,Not Connected
+2025-04-06 15:04:53,Mi 11 Lite 5G,3e:08:42:91:a6:a8,100,-20.0,0.1,48.7719,2.0189,Not Connected
+2025-04-06 15:04:53,SFR_528F,b4:9d:fd:35:52:91,5,-86.5,210.03,48.7719,2.0189,Not Connected
+2025-04-06 15:04:53,Landryy,0e:0d:33:f6:3b:67,100,-20.0,0.1,48.7719,2.0189,Not Connected
