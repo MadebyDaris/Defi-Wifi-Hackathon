@@ -8,6 +8,8 @@ import 'package:defiwifi/direction.dart';
 import 'package:defiwifi/rs_link.dart';
 
 
+String rustOutput = '';
+
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   // await Firebase.initializeApp();
@@ -81,12 +83,12 @@ class WiFiWidget extends StatelessWidget {
             right: 20,
             child: ElevatedButton(
               onPressed: () {
-                backendBloc.fetchData();
+                rustOutput = getPacketsFromRust();
               },
               child: const Text('Refresh Data'),
             ),
           ),
-          Text(getHelloFromRust()),
+          Text(rustOutput),
         ]
       ),
     );

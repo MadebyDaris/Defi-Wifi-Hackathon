@@ -1,19 +1,24 @@
 [package]
 name = "rust_backend"
 version = "0.1.0"
-edition = "2024"
+edition = "2021"
 
 [lib]
-name = "rust_backend"           # The name of the target.
-path = "src/lib.rs"    # The source file of the target.
-test = true            # Is tested by default.
-doctest = true         # Documentation examples are tested by default.
-bench = true           # Is benchmarked by default.
-doc = true             # Is documented by default.
-proc-macro = false     # Set to `true` for a proc-macro library.
-harness = true         # Use libtest harness.
-edition = "2024"       # The edition of the target.
+name = "rust_backend"
 crate-type = ["cdylib"]
-required-features = [] # Features required to build this target (N/A for lib).
+
+[build-dependencies]
+cc = "1.0"
 
 [dependencies]
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+tokio = { version = "1.0", features = ["full"] }
+
+[target.'cfg(target_os = "android")'.dependencies]
+log = "0.4"
+jni = "0.21"
+android_logger = "0.11"
+
+[target.'cfg(any(target_os = "linux", target_os = "macos", target_os = "windows"))'.dependencies]
+wifiscanner = "0.5.1"
